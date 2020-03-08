@@ -1,6 +1,6 @@
-# variational autoencoder
+# variational auto-encoder(VAE)
 
-variational autoencoderを行列演算ライブラリを用いて実装する。
+variational auto-encoderを行列演算ライブラリを用いて実装する。
 
 # environment
 

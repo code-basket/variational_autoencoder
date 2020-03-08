@@ -4,9 +4,9 @@
 
 #include <string>
 #include <map>
-#include <sstream>
 #include <iostream>
 #include <docopt.h>
+#include <mnist/mnist_reader.hpp>
 
 #define VERSION_STRING "v_0.0.0"
 
@@ -16,13 +16,11 @@ static const char USAGE[] =
         R"([cmd]
 variational auto-encoder
 Usage:
-
-  variational auto-encoder <input>
-  variational auto-encoder (-h | --help)
-  variational auto-encoder --version
+  vae
+  vae (-h | --help)
+  vae --version
 
 Options:
-  <input>                          input
   -h --help                        Show help
   --version                        Show version.
   )";
@@ -38,7 +36,18 @@ int main(int argc, char *argv[]) {
     std::cout << arg.first <<  arg.second << std::endl;
   }
   #endif
-  std::cout << "hello world!" << std::endl;
+
+  std::cout << "MNIST data directory: " << MNIST_DATA_LOCATION << std::endl;
+
+  // Load MNIST data
+  mnist::MNIST_dataset <std::vector, std::vector<uint8_t>, uint8_t> dataset =
+      mnist::read_dataset<std::vector, std::vector, uint8_t, uint8_t>(MNIST_DATA_LOCATION);
+
+  std::cout << "Nbr of training images = " << dataset.training_images.size() << std::endl;
+  std::cout << "Nbr of training labels = " << dataset.training_labels.size() << std::endl;
+  std::cout << "Nbr of test images = " << dataset.test_images.size() << std::endl;
+  std::cout << "Nbr of test labels = " << dataset.test_labels.size() << std::endl;
+
   return 0;
 }
 

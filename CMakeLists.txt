@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.7)
+cmake_minimum_required (VERSION 3.15)
 project(variational_autoencoder)
 
 set(CMAKE_DISABLE_SOURCE_CHANGES OFF)
@@ -19,5 +19,6 @@ ENDIF()
 set(OpenCV_DIR ~/gits/opencv/build)
 add_subdirectory(3rd-party/pytorch)
 add_subdirectory(3rd-party/docopt.cpp)
+add_subdirectory(3rd-party/mnist/example)
 add_subdirectory(src)
 
