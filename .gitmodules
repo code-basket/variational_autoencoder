@@ -1,9 +1,0 @@
-[submodule "3rd-party/pytorch"]
-	path = 3rd-party/pytorch
-	url = git@github.com:pytorch/pytorch.git
-[submodule "3rd-party/docopt.cpp"]
-	path = 3rd-party/docopt.cpp
-	url = git@github.com:docopt/docopt.cpp.git
-[submodule "3rd-party/mnist"]
-	path = 3rd-party/mnist
-	url = git@github.com:wichtounet/mnist.git
